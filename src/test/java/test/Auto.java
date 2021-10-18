@@ -9,8 +9,16 @@ public class Auto {
 	static int cantidadCreados;
 	
 	int cantidadAsientos() {
+		int contador = 0;
+		for (int i = 0; i< this.asientos.length;i++ ) {
+			if(this.asientos[i] != null ) {
+				contador++;
+			
+			}
+			
+		}
 		
-		return this.asientos.length;
+		return contador;
 	}
 	
 	
@@ -19,11 +27,13 @@ public class Auto {
 		if (this.registro == this.motor.registro) {
 			
 			for (int i = 0; i < this.asientos.length;i++) {
-				 if (this.asientos[i].registro != this.registro) {
-					 verificacion = false;
-					 break;
+				if(this.asientos[i] != null) {
+				  if (this.asientos[i].registro != this.registro) {
+					  verificacion = false;
+					  break;
 					
 				 }
+			  } 
 			}
 			
 			if (verificacion == true) {
